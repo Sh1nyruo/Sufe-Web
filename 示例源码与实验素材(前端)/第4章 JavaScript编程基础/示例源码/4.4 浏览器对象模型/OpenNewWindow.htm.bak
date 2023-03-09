@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>开新窗口</title>
+    <script type="text/javascript">
+    //显示一个新的浏览器窗口
+    function openNewWindows() {
+    var w = window.open();             		//新建一个空白的窗口
+    var d = w.document;               		// 获取它的document对象
+    d.open();                            			// 开始一个新的HTML文档
+    d.write("<h1>这是动态写入的HTML代码</h1>");  	// 写入内容
+    d.close();                           			// 结束HTML文档的编写
+}
+
+function btnNewWindow_onclick() {
+openNewWindows();
+}
+
+    </script>
+</head>
+<body style="text-align:center;">
+<h2>开新窗口</h2>
+<hr/>
+展示如何使用JavaScript编程打开一个新的浏览器窗口，并向新窗口中动态写入HTML代码。<br/><br/>
+
+    <input id="btnNewWindow" type="button" value="开新窗口" onclick="return btnNewWindow_onclick()" />
+</body>
+</html>

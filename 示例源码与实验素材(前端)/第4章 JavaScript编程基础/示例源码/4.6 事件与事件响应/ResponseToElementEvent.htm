@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>响应HTML元素的事件</title>
+    <script type="text/javascript">
+        function ChangeStyle(elem)
+        {
+            elem.style.color="red";
+            elem.style.fontSize="larger";
+            elem.style.cursor="pointer";
+        }
+        function ResetStyle(elem)
+        {
+           
+            elem.style.color="black";
+            elem.style.fontSize="medium";
+            elem.style.cursor="default";
+        }
+    </script>
+</head>
+<body  style="text-align:center;">
+<h2>响应HTML元素的事件</h2>
+本示例展示如何用JavaScript编写代码响应div元素的onmouseover和onmouseout事件。<br/>
+另外还请注意JavaScript代码是如何设置元素样式规则的。
+<hr/>
+<div onmouseover="ChangeStyle(this);"   onmouseout="ResetStyle(this);"> 这是一段鼠标移入后会变色的文字。</div>
+
+</body>
+</html>

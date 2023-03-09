@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>JavaScript的函数参数数组</title>
+    <script type="text/javascript">
+		// 使用参数数组获取传递的参数
+		function sumInteger()
+		{
+   			var total = 0;
+   			// 获取传递的所有参数
+   			for(var i=0; i<sumInteger.arguments.length; i++)
+   			{
+       			total += sumInteger.arguments[i];
+  			}
+   			return total;
+		}
+	</script>
+</head>
+<body>
+<h2>JavaScript的函数参数数组</h2>
+<hr />
+<script  type="text/javascript">
+	// 声明变量
+	var intTotal = 0;
+	intTotal = sumInteger(1,100,98,29);
+	document.write("函数sumInteger(1,100,98,29)="+intTotal+"<br />");  
+</script>
+
+</body>
+</html>

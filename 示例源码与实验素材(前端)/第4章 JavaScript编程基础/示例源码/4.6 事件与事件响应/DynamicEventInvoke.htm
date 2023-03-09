@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>运行时动态指定响应函数</title>
+</head>
+<body style="text-align:center;">
+<h2>运行时动态指定响应函数</h2>
+使用JavaScript脚本编程将一个函数指定为按钮单击事件的响应函数。
+<hr />
+<input id="btnClick" type="button" value="Click me!" />
+        <script type="text/javascript">
+            var btn=document.getElementById("btnClick");
+            btn.onclick=function()
+            {
+            	alert("Hello");
+            }
+        </script>
+
+
+</body>
+</html>

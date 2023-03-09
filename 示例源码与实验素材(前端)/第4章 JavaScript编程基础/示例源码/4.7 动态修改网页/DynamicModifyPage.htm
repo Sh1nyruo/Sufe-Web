@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>动态修改网页内容</title>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+
+	function btnAdd_onclick() 
+	{
+		//获取用户输入的内容
+		var txt=document.getElementById("txtUserInput");
+		var content=document.getElementById("content");
+		//动态创建一个p元素
+		var p=document.createElement("p");
+		p.innerHTML=txt.value;
+		//将p元素添加到DOM树中
+		content.appendChild(p);
+		//选中文本框中的文本，以方便用户输入第二段
+		txt.select();
+	}
+
+	function btnDelete_onclick() 
+	{
+		//获取用户输入的内容
+		var paraNo=document.getElementById("txtParaNo").value;
+		var content=document.getElementById("content");
+		//如果用户输入的段落序号是有效的
+		if(parseInt(paraNo)<=content.childNodes.length)
+	       content.removeChild(content.getElementsByTagName("p")[parseInt(paraNo)-1]);//从DOM树中移除指定的段落
+	}
+
+// ]]>
+</script>
+</head>
+<body>
+<h2>利用DOM动态修改网页内容</h2>
+<hr />
+<table>
+    <tr>
+        <td>
+        请输入文本：</td>
+        <td>
+            <input id="txtUserInput" type="text" /></td>
+        <td>
+            <input id="btnAdd" type="button" 
+            value="添加" onclick="return btnAdd_onclick()" /></td>
+    </tr>
+    <tr>
+        <td>
+            请选择要删除的段落序号：</td>
+        <td>
+            <input id="txtParaNo" type="text"  value="1" /></td>
+        <td>
+            <input id="btnDelete" type="button" value="删除" onclick="return btnDelete_onclick()" /></td>
+    </tr>
+   
+</table>
+<hr />
+<div id="content">
+</div>
+
+</body>
+</html>

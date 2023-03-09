@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>JavaScript对话框</title>
+
+    <script language="javascript" type="text/javascript">
+// <!CDATA[
+
+function btnAlert_onclick() {
+    alert("这是一个警告对话框，常用于输出一些信息");
+        
+
+}
+
+function btnConfirm_onclick() {
+  var ret=confirm("这是确认操作对话框，提供两个按钮供用户选择");
+   var info= document.getElementById("info");
+   if(ret==true)
+         info.innerHTML="你按了确定按钮";
+   else
+         info.innerHTML="你按了取消按钮";
+   
+}
+
+function btnPrompt_onclick() {
+   var ret= prompt("这是一个提示信息","用户请在此输入");
+    var info= document.getElementById("info");
+    if(ret!="")
+         info.innerHTML="您输入了："+ret;
+     if( ret=="")
+         info.innerHTML="您按了确定按钮，但没有输入信息";
+         if(ret==null)
+          info.innerHTML="您按了取消按钮";
+}
+
+// ]]>
+    </script>
+
+</head>
+<body style="text-align:center;">
+<h2>JavaScript对话框</h2>
+<hr/>
+    <input id="btnAlert" type="button" value="alert: 警告对话框" onclick="return btnAlert_onclick()" />
+    <br />
+    <br />
+    <input id="btnConfirm" type="button" value="confirm： 确认操作对话框" onclick="return btnConfirm_onclick()" />
+    <br />
+    <br />
+    <input id="btnPrompt" type="button" value="prompt：用户输入对话框" onclick="return btnPrompt_onclick()" />
+    <br /> 
+    <br />
+    <div id="info">
+    </div>
+</body>
+</html>

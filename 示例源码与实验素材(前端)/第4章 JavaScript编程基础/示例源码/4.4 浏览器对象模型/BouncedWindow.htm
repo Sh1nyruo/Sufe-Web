@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>跳动的窗口</title>
+</head>
+<body>
+<div style="text-align:center;">
+<h2>跳动的窗口</h2>
+<hr/>
+<button onclick="bounce.start( )">显示跳动的窗口</button>
+<button onclick="bounce.stop( )">关闭跳动的窗口</button>
+</div>
+
+<script type="text/javascript">
+/* 注意： IE必须设置为允许本地计算机上文件中的活动脚本运行，此例中的弹出窗口才会显示出内容。*/
+var bounce = {
+    x:0, y:0, w:200, h:200,  // 浏览器窗口左上角坐标（x,y),宽度w，高度h
+    dx:5, dy:5,              // x和y坐标每次变化的增量
+    interval: 100,           // 坐标更新间隔（以毫秒为单位）
+    win: null,               // 用于引用即将创建的浏览器窗口
+    timer: null,                 // 定时器，由setInterval( )方法返回
+
+    // 开始
+    start: function( ) {
+         // 为使浏览器窗口居于屏幕中央，计算左上角坐标
+           bounce.x = (screen.width - bounce.w)/2;
+         bounce.y = (screen.height - bounce.h)/2;
+
+        // 创建一个新的浏览器窗口并显示它。
+         // 第一个参数表示新窗口中要显示的网页的URL，可以直接使用javascript前缀执行简短的javascript代码
+         // 此处浏览器虽然会发现“<h1>跳动的窗体</h1>”不是javascript，但默认情况下对于不能执行的javascript代码，
+         //浏览器会直接输出，这刚好达到我们的目的。
+         bounce.win = window.open('javascript:"<h1>Jump!</h1>"', "_blank",
+                                  "left=" + bounce.x + ",top=" + bounce.y +
+                                  ",width=" + bounce.w + ",height=" +bounce.h+
+                                  ",status=no");
+      
+      //也可以不在上面的open方法中使用"javascript:"前缀来输出html代码，而是直接调用新窗口的document.write()方法来输出
+      // 使用bounce.win.document来访问新窗口的document对象
+
+       
+         //每隔指定的毫秒数就使用setInterval( )方法调用nextFrame( )
+         //方法返回值保存在timer属性中，这样，后面我们就可以调用clearInterval( )方法停止动画
+         bounce.timer  = setInterval(bounce.nextFrame, bounce.interval);
+    },
+
+    // 停止动画
+    stop: function( ) {
+         clearInterval(bounce.timer);               // 取消定时器
+         if (!bounce.win.closed) bounce.win.close( ); 		// 关闭窗口
+    },
+
+    // 在下一个坐标处显示浏览器窗口
+    
+   	 nextFrame: function( ) {
+         // 如果用户关闭了浏览器窗口，停止动画
+         if (bounce.win.closed) {
+             clearInterval(bounce.timer);
+             return;
+         }
+
+         //如果到达了屏幕的左或右边缘，向反方向移动
+         
+         if ((bounce.x+bounce.dx > (screen.availWidth - bounce.w)) ||
+             (bounce.x+bounce.dx < 0)) bounce.dx = -bounce.dx;
+
+         // 如果到达了屏幕的上或下边缘，向反方向移动
+         if ((bounce.y+bounce.dy > (screen.availHeight - bounce.h)) ||
+             (bounce.y+bounce.dy < 0)) bounce.dy = -bounce.dy;
+
+         // 更新当前窗口坐标
+           bounce.x += bounce.dx;
+         bounce.y += bounce.dy;
+
+         // 将窗口移到新坐标
+         bounce.win.moveTo(bounce.x,bounce.y);
+        
+    }
+}
+</script>
+
+
+</body>
+</html>

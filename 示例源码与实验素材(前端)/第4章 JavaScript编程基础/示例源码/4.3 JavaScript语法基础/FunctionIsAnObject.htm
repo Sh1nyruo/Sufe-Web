@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>函数是一个对象</title>
+    <script type="text/javascript">
+    	//定义一个Add函数  
+    	function Add(x,y)
+    	{
+        	return x+y;
+    	}
+    	//此函数有三个参数，其中第一个参数为另一个函数
+    	//后两个参数将传给第一个参数所代表的函数
+    	function useOtherFunction(func,argu1,argu2)
+    	{
+        	alert(func(argu1,argu2));
+    	}
+    </script>
+</head>
+<body>
+
+<h2>函数是一个对象</h2>
+<hr/>
+本网页展示如何将一个函数作为另外一个函数的参数，以及如何将函数附加到一个对象上使之成为此对象的方法。
+
+<script type="text/javascript">
+	//通过useOtherFunction函数间接调用Add函数
+    useOtherFunction(Add,100,200);
+</script>
+
+<script type="text/javascript">
+	var o = new Object; //o是Object类的实例（即对象）
+	o.square = function(x) { return x*x; }    //将函数附加到对象上，它成为此对象的方法   
+	y = o.square(16);          
+	alert(y);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>“简单选择器”之“伪类选择器”</title>
+    <style type="text/css">
+        a:link /*包含href属性的a元素显示的颜色*/
+        {
+            color: Navy;
+        }
+        a:visited /*访问过的a元素显示的颜色*/
+        {
+            color: Gray;
+        }
+        a:hover /*鼠标悬浮于a元素上时显示的颜色*/
+        {
+            color: Red;
+        }
+    </style>
+</head>
+<body>
+    <h2>
+        “简单选择器”之“伪类选择器”</h2>
+    <hr />
+    <a href="http://blog.sina.com.cn/bitfan">请访问作者博客</a>
+</body>
+</html>

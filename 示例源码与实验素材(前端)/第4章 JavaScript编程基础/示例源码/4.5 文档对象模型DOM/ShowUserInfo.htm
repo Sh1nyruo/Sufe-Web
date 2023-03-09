@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>访问窗体和窗体上的控件</title>
+<script language="javascript" type="text/javascript">
+// <!CDATA[
+function btnShowInfo_onclick() {
+    var str="账号："+document.forms[0].txtUserName.value+"<br />";
+    str+="密码："+document.forms[0].txtPwd.value+"<br />";
+    var div=document.getElementById("userinfo");
+    div.innerHTML=str;
+}
+// ]]>
+</script>
+</head>
+<body>
+<form id="frmLogin" action=""  onsubmit="validate();">
+    <div style="text-align: center;">
+        <h2>
+        访问窗体和窗体上的控件</h2>
+        本网页展示了使用HTML DOM来访问HTML元素最常用的方法。
+    <hr />
+<br />
+        账号：<input id="Text1" name="txtUserName" type="text" />
+        <br />
+        密码：<input id="Password1" name="txtPwd" type="password" />
+        <br />
+        <br />
+        <input id="btnShowInfo" type="button" value="获取用户输入的文本"  onclick="return btnShowInfo_onclick()" />
+        
+        <hr /> <br />
+        <div id="userinfo" />
+    </form>
+</body>
+</html>

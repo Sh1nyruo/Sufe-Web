@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>显示当前时间</title>
+    <script type="text/javascript">
+    
+    function  ShowTime()
+    {
+        var ShowTimeDiv=document.getElementById("currentTime");
+        if(ShowTimeDiv)
+        {
+            ShowTimeDiv.innerHTML="当前时间："+(new Date).toLocaleTimeString();
+            
+        }
+    }
+    var intervalID;
+    function BeginShowTime()
+    {
+        intervalID=setInterval(ShowTime,1000);
+        setTimeout("alert('隔3秒后弹出此消息框，只显示一次。')",3000);
+    }
+    
+    function StopShowTime()
+    {
+         clearInterval(intervalID);
+    }
+    
+    </script>
+</head>
+<body style="text-align:center;">
+
+<h2>显示当前时间</h2>
+展示setTimeout和setInterval的用法。<br/>
+<hr/>
+<div id="currentTime">
+</div>
+<br />
+<input name="btnStart" type="button" value="显示时间" onclick="BeginShowTime();"  />
+<input name="btnEnd" type="button" value="停止刷新显示时间" onclick="StopShowTime();" />
+
+</body>
+</html>

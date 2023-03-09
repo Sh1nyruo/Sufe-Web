@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>创建和访问自定义对象</title>
+</head>
+<body>
+<h2>创建和访问自定义对象</h2>
+<hr />
+<script type="text/javascript">
+	//--------------------------------------
+	//以下代码展示JavaScript创建对象的基本方法
+	//----------------------------------------
+	
+	var book=new Object();   //一个没有任何属性的对象
+	//动态给对象添加三个属性
+	book.title="ASP.NET程序设计教程";
+	book.author="金旭亮";
+	book.publishingHouse="高等教育出版社";
+	//访问对象的publishingHouse属性
+	alert("访问对象的publishingHouse属性："+book.publishingHouse);
+	
+	//使用with关键字访问对象属性
+	with(book)
+	{
+	    alert("使用with关键字访问对象publishingHouse属性："+publishingHouse);
+	}
+	
+	//动态添加一个方法
+	book.showInfo=function()
+	{
+	    return "类的showInfo方法用于显示书的信息："+book.title+"－"+book.author+"－"+book.publishingHouse;
+	}
+	//调用对象的方法
+	alert(book.showInfo());
+    //注意：如果删除上面代码中的“()”，将导致showInfo成为book对象的简单属性，alert()将直接显示JavaScript代码
+    alert(book.showInfo);
+	
+	//删除publishingHouse属性
+	delete book.publishingHouse;
+	
+	//再次尝试访问对象的publishingHouse属性
+	//先检查publishingHouse属性是否还存在？
+	if(book.publishingHouse)
+	    //访问对象的publishingHouse属性
+	    alert(book.publishingHouse);
+	else
+	    alert("publishingHouse属性已被删除。");
+
+</script>
+
+</body>
+</html>

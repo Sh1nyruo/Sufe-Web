@@ -1,0 +1,14 @@
+﻿/*指定div元素在浏览器中的显示样式*/
+div
+{
+    /*设定字体属性*/
+     text-align:center;  /*文字居中对齐 */
+     font-style:italic;  /*斜体*/
+     font-weight:bold;  /*粗体*/
+     color:Blue;        /*前景色为蓝色*/
+     
+     /*设定边框属性*/
+     border:solid 1px red;  /* 显示宽为1像素的细实线的红色边框 */
+     width:200px;           /*边框宽200像素*/
+     margin:0 auto;         /*边框自动居于浏览器窗口中间*/
+}

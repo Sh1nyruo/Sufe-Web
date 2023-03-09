@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>客户端数据验证2——使用form.submit方法和自定义检验函数</title>
+<script type="text/javascript">
+	function validate()
+	{
+		 if(document.forms[0].txtUserName.value=="")
+	     {
+		    alert("账号不能为空");
+        	return false;
+    	}
+   		if(document.forms[0].txtPwd.value=="")
+   		{
+        	alert("密码不能为空");
+        	return false;
+    	}
+    	else
+    		if(document.forms[0].txtPwd.value.length<6)
+    		{
+    		    alert("密码至少有6位");
+    		    return false;
+    		}
+  
+   		return true;
+   
+	}
+
+	function button1_click()
+	{
+	    if(validate())
+	    {
+	        document.forms[0].submit();  
+	        alert("数据有效，可以提交！");
+	    }
+	}
+    </script>
+</head>
+
+<body>
+
+<form id="frmLogin">
+	<div style="text-align: center;">
+		<h2>客户端数据验证2——使用form.submit方法和自定义检验函数</h2>
+		<hr />
+		<table style="margin: 0 auto;">
+			<tr>
+				<td>账号：</td>
+				<td><input id="Text1" name="txtUserName" type="text" /></td>
+			</tr>
+			<tr>
+				<td>密码：</td>
+				<td><input id="Password1" name="txtPwd" type="password" /></td>
+			</tr>
+		</table>
+		<br />
+		<input id="reset1" type="reset" value="清空" />
+		<input id="button1" type="button" value="确定" onclick="return button1_click();" />
+	</div>
+</form>
+
+</body>
+
+</html>

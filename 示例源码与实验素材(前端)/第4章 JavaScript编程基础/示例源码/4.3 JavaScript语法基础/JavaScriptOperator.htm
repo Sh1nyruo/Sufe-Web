@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>JavaScript运算符</title>
+</head>
+<body>
+
+<script type="text/javascript">
+	document.write("<h2> 算术运算符 </h2>");
+	var x, y;
+	var intInc = 10;
+	var intDec = 10;
+	document.write("intInc=10, intDec=10 <br /> <hr />");
+	document.write("负号运算: -intInc    = " + (-intDec)  + "<br/>");
+	intInc++;
+	document.write("递增运算: intInc++ = " + intInc + "<br/>");
+	intDec--;
+	document.write("递减运算: intDec-- = " + intDec + "<br />");
+	document.write("乘法运算: 5 * 6 = " + 5*6 + "<br />");
+	document.write("除法运算: 7 / 2 = " + 7/2 + "<br />");
+	document.write("余数运算: 7 % 2 = " + 7%2 + "<br />");
+	document.write("加法运算: 4 + 3 = " + (4+3) + "<br />"); 
+	document.write("减法运算: 4 - 3 = " + (4-3) + "<br /> <hr />");
+
+	document.write("<h2> 逻辑运算符 </h2>");
+
+	var blnA = true;
+	var blnB = false;
+	document.write("blnA=true, blnB=false  <br /> <hr />");
+	document.write("NOT逻辑运算: !blnA 结果为 "+ (!blnA)+"<br />");
+	document.write("小于: 6<3  结果为 "+(6<3)+"<br />");
+	document.write("大于: 6>3  结果为 "+(6>3)+"<br />");
+	document.write("小于等于: 6<=3 结果为 "+(6<=3)+"<br />");
+	document.write("大于等于: 6>=3  结果为 "+(6>=3)+"<br />");
+	document.write("等于: 6==3  结果为 "+ (6==3)+"<br />");
+	document.write("不等于: 6!=3  结果为 "+(6!=3)+"<br />");
+	document.write("AND逻辑运算: blnA && blnB 结果为 "+ (blnA && blnB)+"<br />");
+	document.write("OR逻辑运算: blnA || blnB 结果为 "+ (blnA || blnB)+"<br /> <hr />");
+
+
+	document.write("<h2> 位运算符 </h2>");
+
+	var intA = 1;  // 0001
+	var intB = 2;  // 0010
+	var intC = 3;  // 0011
+	var intD = 16; // 1000
+	document.write("intA=1, intB=2, intC=3, intD=16  <br /> <hr />");
+
+	document.write("NOT运算: ~intA = " + (~intA) + "<br>");
+	document.write("左移运算: intC << 2 = " + (intC<<2) + "<br>");
+	document.write("右移运算: intB >> 1 = " + (intB>>1) + "<br>"); 
+	document.write("无符号右移运算: intD >>> 1 = " + (intD>>>1) + "<br>");
+	document.write("AND运算: intA & intC = " + (intA & intC) + "<br>");
+	document.write("XOR运算: intA ^ intB = " + (intA ^ intB) + "<br>");
+	document.write("OR运算: intA | intB = " + (intA | intB) + "<br>");
+</script>
+</body>
+</html>

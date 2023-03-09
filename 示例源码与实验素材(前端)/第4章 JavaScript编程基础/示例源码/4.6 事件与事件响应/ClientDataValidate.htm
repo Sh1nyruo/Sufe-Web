@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>客户端数据验证1——使用submit类型的按钮和onsubmit事件</title>
+<script type="text/javascript">
+   
+	function validate()
+	{
+		if(document.forms[0].txtUserName.value=="")
+    	{
+    	    alert("账号不能为空");
+    	    return false;
+    	}
+   		if(document.forms[0].txtPwd.value=="")
+    	{
+    	    alert("密码不能为空");
+    	    return false;
+    	}
+    	else
+    		if(document.forms[0].txtPwd.value.length<6)
+    		{
+    		    alert("密码至少有6位");
+    		    return false;
+    		}
+   		alert("数据有效，可以提交！");
+   		return true;
+	}
+    </script>
+</head>
+
+<body>
+
+<form id="frmLogin" action="" method="post" onsubmit=" return validate();">
+	<div style="text-align: center;">
+		<h2>客户端数据验证1——使用submit类型的按钮和onsubmit事件</h2>
+		<hr />
+		<table style="margin:0 auto;">
+			<tr>
+				<td>账号：</td>
+				<td><input id="Text1" name="txtUserName" type="text" /></td>
+			</tr>
+			<tr>
+				<td>密码：</td>
+				<td><input id="Password1" name="txtPwd" type="password" /></td>
+			</tr>
+		</table>
+		<br />
+		<input id="reset1" type="reset" value="清空" />
+		<input id="submit1" type="submit" value="确定" /> </div>
+</form>
+
+</body>
+
+</html>

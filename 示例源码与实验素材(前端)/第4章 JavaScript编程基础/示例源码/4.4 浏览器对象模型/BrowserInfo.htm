@@ -1,0 +1,17 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>navigator对象的用法</title>
+</head>
+<body>
+
+<script type="text/javascript">
+	var browser = "<h2>navigator对象的各项属性值:</h2><hr>";
+	for(var propname in navigator) {
+	    browser += "<b>"+propname + "</b>: " + navigator[propname] + "<br />"
+	}
+	document.write(browser);
+</script>
+</body>
+</html>

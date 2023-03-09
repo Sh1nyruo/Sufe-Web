@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>“复合选择器”之“并集选择器”</title>
+<style type="text/css">
+div,.special,#one{		/* 集体声明 */
+	text-decoration:underline;	/* 下划线 */
+	color:blue;
+}
+</style>
+</head>
+<body>
+	
+	<h2 >“复合选择器”之“并集选择器”</h2>
+	<hr />
+	本网页使用并集选择器一次为“div,.special,#one”建立同样的样式属性值。因此下面三段文字拥有相同的显示效果。<br /><br />
+	<div>
+	本段文本位于div元素内
+	</div>
+	<p class="special">指定了special样式类的段落</p>
+	<p id="one">指定了id的段落</p>
+</body>
+</html>

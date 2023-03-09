@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html PUBliC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>盒子的“绝对定位”方式（1）</title>
+<style type="text/css">
+body{
+	margin:20px;
+	font-family:Arial;
+	font-size:12px;
+}
+#father
+{
+     /*试一试，如果父盒子设为浮动，会带来什么样的效果?*/
+    /*float:left;*/
+	background-color:#a0c8ff;
+	border:1px dashed #000000;
+	padding:15px;
+}
+.block{
+	background-color:#fff0ac;
+	border:1px dashed #000000;
+	padding:10px;
+	}
+
+</style>
+</head>
+<body>
+<h2>盒子的“绝对定位”方式（1）</h2>
+<p>Box-2盒子的position=absolute，未指定父块的定位方式</p>
+<hr />
+	<div id="father">
+		<div class="block">Box-1</div>
+		<div class="block" style="position:absolute;top:0px;right:0px;">Box-2</div>
+		<div class="block">Box-3</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>层叠特性</title>
+    <style type="text/css">
+        #warnning_info1, #warnning_info2,warnning_info3  /*警告信息*/
+        {
+            color: Red;
+        }
+        .ordinary_info  /*一般信息*/
+        {
+            color: Green;
+        }
+        p       /*普通段落文本*/
+        {
+            color: Blue;
+        }
+    </style>
+</head>
+<body>
+    <h2>
+        样式的层叠</h2>
+    <hr />
+    这是body内的文字，没有使用任何选择器
+    <p>此段文字应用了标签选择器</p>
+    <p id="warnning_info1">
+        此段文字使用了ID选择器warnning_info1</p>
+    <p class="ordinary_info">
+        此段文字使用了类别选择器ordinary_info</p>
+    <p class="ordinary_info" id="warnning_info2">
+        此段文字同时使用了类别选择器ordinary_info和ID选择器warnning_info2</p>
+    <p class="ordinary_info" id="warnning_info3" style="color: Olive">
+        此段文字同时使用了类别选择器ordinary_info和ID选择器warnning_info3,同时又指定了自己的style属性</p>
+</body>
+</html>

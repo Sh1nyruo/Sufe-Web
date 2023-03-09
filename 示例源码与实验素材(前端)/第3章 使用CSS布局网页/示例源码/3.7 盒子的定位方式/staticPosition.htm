@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html PUBliC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ 					"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>position属性之“静态定位”</title>
+<style type="text/css">
+body{
+	margin:20px;
+	font :Arial 12px;
+}
+#father
+{
+    /*不管父块浮动与否，静态定位的子块都是保持相同的大小和次序，可以试着让父块浮动，看看效果*/
+    /* float:left; */
+	background-color:#a0c8ff;
+	border:1px dashed #000000;
+	padding:15px;
+}
+
+.block{
+	background-color:#fff0ac;
+	border:1px dashed #000000;
+	padding:10px;
+}
+</style>
+</head>
+<body>
+
+<h2>盒子模型的“静态定位”方式</h2>
+<p>所有盒子的position=static，此为默认值</p>
+<hr />
+
+	<div id="father">
+		<div class="block">Box-1</div>
+		<div class="block">Box-2</div>
+		<div class="block">Box-3</div>
+	</div>
+</body>
+</html>

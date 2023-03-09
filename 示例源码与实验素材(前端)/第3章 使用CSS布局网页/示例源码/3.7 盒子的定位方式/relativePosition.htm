@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html PUBliC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Language" content="zh-cn" />
+<title>盒子的“相对定位”方式</title>
+<style type="text/css">
+<!--
+body{
+	margin:20px;
+	font-family:Arial;
+	font-size:12px;
+}
+#father{
+	background-color:#a0c8ff;
+	border:1px dashed #000000;
+	padding:15px;
+}
+#father div
+{
+    /*试一试，如果父盒子设为浮动，会带来什么样的效果?*/
+    /*float:left;*/
+	background-color:#fff0ac;
+	border:1px dashed #000000;
+	padding:10px;
+	}
+
+</style>
+</head>
+<body>
+<h2>盒子的“相对定位”方式</h2>
+<p>Box-2盒子的position=relative</p>
+
+<hr />
+
+	<div id="father">
+		<div >Box-1</div>
+		
+		<div style="position:relative;top:10px;left:10px;">Box-2</div>
+		
+		<div >Box-3</div>
+		
+	</div>
+</body>
+</html>

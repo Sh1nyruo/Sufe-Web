@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>样式的继承原则</title>
+    <style type="text/css">
+        div.father
+        {
+            color: blue; /* 颜色 */
+            text-decoration: underline; /* 下划线 */
+        }
+    </style>
+</head>
+<body>
+    <h2>
+        样式的继承原则</h2>
+    <hr />
+    <div class="father">
+        这是父元素内的文本，显示为蓝色加下划线
+        <div>
+            这是子元素内的文本，没有直接指定样式，因此它从父元素中继承样式，显示效果与父元素一样。
+        </div>
+    </div>
+</body>
+</html>
